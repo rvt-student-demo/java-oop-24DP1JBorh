@@ -12,10 +12,10 @@ import java.util.Scanner;
  */
 public class UserInterface {
 
-    private TodoList2Parts todoList;
+    private TodoList todoList;
     private Scanner scanner;
 
-    public UserInterface(TodoList2Parts todoList, Scanner scanner) {
+    public UserInterface(TodoList todoList, Scanner scanner) {
         this.todoList = todoList;
         this.scanner = scanner;
     }
@@ -33,24 +33,31 @@ public class UserInterface {
             if (command.equals("add")) {
                 System.out.print("To add: ");
                 String task = scanner.nextLine();
-
                 todoList.add(task);
-                
-                continue;
             }
 
             if (command.equals("list")) {
                 todoList.print();
-                
-                continue;
+            }
+
+            if (command.equals("update")) {
+                todoList.updateFile();
+            }
+
+            if (command.equals("loadfile")) {
+                todoList.loadFromFile();
+            }
+
+            if (command.equals("getlastid")) {
+                System.out.println(todoList.getLastId());
             }
 
             if (command.equals("remove")) {
                 System.out.print("Which one is removed? ");
                 int id = Integer.valueOf(scanner.nextLine());
-                
                 todoList.remove(id);
             }
+
         }
     }
 }
