@@ -11,7 +11,7 @@ public class Item {
         this.unitPrice = unitPrice;
     }
 
-    public int price() { 
+    public int price() {
         return quantity * unitPrice;
     }
 

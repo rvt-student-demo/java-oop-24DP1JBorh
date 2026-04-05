@@ -35,7 +35,7 @@ public class Warehouse {
     }
 
     public boolean take(String product) {
-        if (!(warehouseStock.containsKey(product)) || warehouseStock.get(product) == 0 ) {
+        if (!(warehouseStock.containsKey(product)) || warehouseStock.get(product) == 0) {
             return false;
         }
 
@@ -47,5 +47,4 @@ public class Warehouse {
         return warehouseStock.keySet();
     }
 
-    
 }
