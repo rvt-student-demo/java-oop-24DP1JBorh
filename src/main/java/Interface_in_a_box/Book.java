@@ -1,6 +1,6 @@
 package Interface_in_a_box;
 
-public class Book implements Packable{
+public class Book implements Packable {
     private String author;
     private String name;
     private double weight;

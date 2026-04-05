@@ -1,6 +1,6 @@
 package Interface_in_a_box;
 
-public class CD implements Packable{
+public class CD implements Packable {
     private String artist;
     private String name;
     private int year;
