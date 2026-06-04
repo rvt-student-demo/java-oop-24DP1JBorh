@@ -1,4 +1,5 @@
-package rvt;
+package TodoList;
+
 import java.util.Scanner;
 
 /*
@@ -10,17 +11,25 @@ import java.util.Scanner;
  *
  * @author jegor
  */
-public class UserInterface2Parts {
+public class UserInterface {
 
-    private TodoList2Parts todoList;
+    private TodoList todoList;
     private Scanner scanner;
 
-    public UserInterface2Parts(TodoList2Parts todoList, Scanner scanner) {
+    public UserInterface(TodoList todoList, Scanner scanner) {
         this.todoList = todoList;
         this.scanner = scanner;
     }
 
     public void start() {
+
+        System.out.println("""
+                    command list:
+                    stop - stop programm
+                    add - add task
+                    list - list all tasks
+                    remove - remove task
+                """);
 
         while (true) {
             System.out.print("Command: ");
@@ -35,20 +44,20 @@ public class UserInterface2Parts {
                 String task = scanner.nextLine();
 
                 todoList.add(task);
-                
+
                 continue;
             }
 
             if (command.equals("list")) {
                 todoList.print();
-                
+
                 continue;
             }
 
             if (command.equals("remove")) {
                 System.out.print("Which one is removed? ");
                 int id = Integer.valueOf(scanner.nextLine());
-                
+
                 todoList.remove(id);
             }
         }
